@@ -21,7 +21,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@icons/*": ["./public/icons/*"]
+      "@images/*": ["./public/images/*"]
     }
   },
   "exclude": ["node_modules"],
