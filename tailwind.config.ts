@@ -4,6 +4,15 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      fontSize: {
+        10: "2.5rem",
+      },
+      lineHeight: {
+        14: "3.5rem",
+      },
+      spacing: {
+        "1/5.26": "19.16%",
+      },
       transitionProperty: {
         "max-h": "max-height",
         color: "color",
@@ -11,6 +20,9 @@ export default {
       colors: {
         input: {
           bg: "rgba(0, 91, 91, 0.50)",
+        },
+        black: {
+          100: "#001215",
         },
         green: {
           300: "#91A4BC",
