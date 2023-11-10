@@ -6,6 +6,7 @@ export default {
     extend: {
       fontSize: {
         10: "2.5rem",
+        "4.5": "1.125rem",
       },
       lineHeight: {
         14: "3.5rem",
@@ -39,6 +40,8 @@ export default {
           500: "#647E9A",
           600: "#566E88",
           700: "#465A71",
+          800: "#344456",
+          900: "#253343",
         },
         red: {
           500: "#EE5353",
