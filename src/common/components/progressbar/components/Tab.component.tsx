@@ -4,7 +4,7 @@ function Tab({ children, active, duration, onClick }: TabProps) {
   return (
     <div className="w-full cursor-pointer text-center" onClick={onClick}>
       <span
-        className={`text-4.5 block h-8 font-black leading-normal tracking-[.125rem] text-gray-600 transition-color ${
+        className={`block h-8 text-4.5 font-black leading-normal tracking-[.125rem] text-gray-600 transition-color ${
           active && "!text-green-600"
         }`}
       >
