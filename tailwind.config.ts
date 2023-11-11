@@ -4,6 +4,9 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      fontFamily: {
+        bnazanin: ["var(--font-b-nazanin)"],
+      },
       fontSize: {
         10: "2.5rem",
         "4.5": "1.125rem",
