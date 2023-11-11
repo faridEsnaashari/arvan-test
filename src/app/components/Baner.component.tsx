@@ -15,7 +15,7 @@ function Baner() {
       <div className="py-[3.75%] pl-[47.08%] pr-1/5.26">
         <h1 className="text-10 font-bold leading-14">{headingText}</h1>
         <p className="mt-6 text-base font-medium leading-[1.625rem]">{headingDescriptionText}</p>
-        <Button className="coursor-pointer mt-12 flex rounded-lg bg-white px-6 py-3 text-green-900" onClick={() => {}}>
+        <Button className="coursor-pointer mt-12 flex rounded-lg bg-white px-6 py-3 text-green-900">
           <span className="ml-2 text-sm leading-4 text-green-900">{buttonText}</span>
           <div className="h-4 w-4">
             <ArrowIcon />
