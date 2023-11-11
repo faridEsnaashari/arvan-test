@@ -2,6 +2,7 @@
 
 import { Button, TextArea, TextField } from "@/common/components/forms";
 import {
+  errorText,
   formButtonText,
   textAreaLabel,
   textAreaPlaceholder,
@@ -18,9 +19,10 @@ import {
   textFieldPlaceholder5,
   textFieldPlaceholder6,
 } from "../texts";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { isEmptyString, isValidEmail, isValidName, isValidPhoneNumber } from "@/tools/helpers.helper";
 import { ArrowIcon } from "@/common/components/svg-icons";
+import useAPICaller from "@/hooks/use-api-caller.hook";
 
 function Form() {
   const [name, setName] = useState("");
@@ -31,10 +33,35 @@ function Form() {
   const [phonenumber2, setPhonenumber2] = useState("");
   const [message, setMessage] = useState("");
 
-  const onClick = () => {};
+  const [nameError, setNameError] = useState(false);
+  const [phonenumberError, setPhonenumberError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+
+  const [submitForm, submitFormResult] = useAPICaller().submitFormCaller;
+
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    if (!isValidName(name)) {
+      setNameError(true);
+      return;
+    }
+
+    if (!isValidPhoneNumber(phonenumber)) {
+      setPhonenumberError(true);
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setEmailError(true);
+      return;
+    }
+
+    submitForm({ name, company, company2, phonenumber, phonenumber2, email, message });
+  };
 
   return (
-    <>
+    <form onSubmit={onSubmit}>
       <div className="flex flex-wrap gap-[2.5%] gap-y-6">
         <TextField
           className="w-1/2.05"
@@ -43,6 +70,8 @@ function Form() {
           value={name}
           onValueChange={(value) => setName(value)}
           onCorrect={(value) => isValidName(value)}
+          showError={nameError}
+          errorText={errorText}
         />
         <TextField
           className="w-1/2.05"
@@ -51,6 +80,8 @@ function Form() {
           value={email}
           onValueChange={(value) => setEmail(value)}
           onCorrect={(value) => isValidEmail(value)}
+          showError={emailError}
+          errorText={errorText}
         />
         <TextField
           className="w-1/2.05"
@@ -59,6 +90,8 @@ function Form() {
           value={phonenumber}
           onValueChange={(value) => setPhonenumber(value)}
           onCorrect={(value) => isValidPhoneNumber(value)}
+          showError={phonenumberError}
+          errorText={errorText}
         />
         <TextField
           className="w-1/2.05"
@@ -83,7 +116,6 @@ function Form() {
           value={company2}
           onValueChange={(value) => setCompany2(value)}
           onCorrect={(value) => isEmptyString(value)}
-          description="dklsfjdskjflskjfklsdjflkjklsdjfklsj"
         />
         <TextArea
           className="h-32 w-full"
@@ -92,19 +124,17 @@ function Form() {
           value={message}
           onValueChange={(value) => setMessage(value)}
           onCorrect={(value) => isEmptyString(value)}
-          description="dklsfjdskjflskjfklsdjflkjklsdjfklsj"
         />
       </div>
-      <div></div>
       <div className="flex justify-end">
-        <Button className="coursor-pointer mt-12 flex rounded bg-green-400 px-5 py-3 text-gray-900" onClick={onClick}>
-          <span className="ml-2 text-sm leading-4">{formButtonText}</span>
+        <Button className="coursor-pointer mt-12 flex rounded bg-green-400 px-5 py-3 text-gray-900">
+          <span className="ml-2 text-sm leading-4">{submitFormResult.isFetching ? "wait" : formButtonText}</span>
           <div className="h-4 w-4">
             <ArrowIcon />
           </div>
         </Button>
       </div>
-    </>
+    </form>
   );
 }
 
