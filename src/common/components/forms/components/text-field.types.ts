@@ -4,9 +4,10 @@ export type TextFieldProps = {
   onValueChange: (value: string) => void;
   label: string;
   description?: string;
-  counter: string;
+  counter?: string;
   onCorrect: (value: string) => boolean;
   errorText?: string;
   showError?: boolean;
-  inActive?: boolean;
+  isActive?: boolean;
+  className?: string;
 };
