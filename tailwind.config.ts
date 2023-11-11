@@ -13,10 +13,15 @@ export default {
       },
       spacing: {
         "1/5.26": "19.16%",
+        "1/2.05": "48.70%",
+        "33": "8.25rem",
       },
       transitionProperty: {
         "max-h": "max-height",
         color: "color",
+      },
+      backgroundImage: {
+        "gradient-footer": "linear-gradient(73deg, rgba(15,91,90,1) 0%, rgba(8,36,39,1) 50%, rgba(8,34,37,1) 100%);",
       },
       colors: {
         input: {
@@ -27,6 +32,7 @@ export default {
         },
         green: {
           300: "#91A4BC",
+          400: "#40CDCD",
           500: "#00BABA",
           600: "#00A7A7",
           700: "#008C8C",
