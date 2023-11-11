@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en" dir="rtl">
+    <html className="text-[0.833333vw]" lang="en" dir="rtl">
       <body>
         <header>
           <Baner />
