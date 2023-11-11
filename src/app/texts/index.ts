@@ -35,3 +35,5 @@ export const formButtonText = "ارسال درخواست";
 
 export const titleText2 = "ارسال درخواست";
 export const titleDescription2 = "ثبت درخواست قرارداد سازمانی";
+
+export const errorText = "مقدار مناسب وارد کنید";
