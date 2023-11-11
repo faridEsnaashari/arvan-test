@@ -26,7 +26,7 @@ function InputWrapper({
 }: InputWrapperProps) {
   return (
     <div className={`flex flex-col gap-2 !leading-4 text-white ${isActive && "!text-gray-300"} ${className}`}>
-      <div className="flex justify-between">
+      <div className="flex justify-between overflow-hidden whitespace-nowrap">
         <span className="block w-full px-2 text-sm">{label}</span>
         <span
           className={`block w-full px-2 text-left text-xs opacity-0 transition-opacity ${hovered && "!opacity-100"}`}
@@ -59,20 +59,20 @@ function InputWrapper({
           <CrossIcon />
         </button>
       </div>
-      {description && (
-        <span
-          className={`block max-h-0 w-full overflow-hidden break-words px-2 text-xs text-gray-200 transition-max-h ${
-            (hovered || typing) && "!max-h-24"
-          } ${isActive && "!text-gray-500"}`}
-        >
-          {description}
-        </span>
-      )}
       {showError && errorText && (
         <div className={`relative pl-2 pr-7 text-red-500 ${isActive && "!text-gray-500"}`}>
           <WarningIcon />
           <span className="block w-full break-words text-xs">{errorText}</span>
         </div>
+      )}
+      {description && (
+        <span
+          className={`block max-h-0 w-full overflow-hidden break-words px-2 text-xs text-gray-200 transition-max-h ${
+            (hovered || typing || showError) && "!max-h-24"
+          } ${isActive && "!text-gray-500"}`}
+        >
+          {description}
+        </span>
       )}
     </div>
   );
