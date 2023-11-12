@@ -8,9 +8,9 @@ import { Form, TabContentFour, TabContentOne, TabContentThree, TabContentTwo } f
 function Page() {
   return (
     <>
-      <section className="px-1/5.26 py-32">
-        <h6 className="text-4.5 font-bold leading-normal text-green-700">{titleText1}</h6>
-        <h1 className="mt-6 text-10 font-bold leading-14 text-gray-900">{titleDescription1}</h1>
+      <section className="px-[3.73%] pb-[6rem] pt-[6rem] xsm:px-[10%] xsm:py-32 md:px-[19.16%]">
+        <h6 className="text-base/normal font-bold text-green-700 xsm:text-4.5/normal">{titleText1}</h6>
+        <h1 className="mt-6 text-3xl font-bold leading-14 text-gray-900 xsm:text-10">{titleDescription1}</h1>
         <div className="mt-16">
           <Progressbar duration={2000}>
             <Step key={getRandomId() + ""} title={tabsTexts[0]}>
@@ -28,10 +28,10 @@ function Page() {
           </Progressbar>
         </div>
       </section>
-      <section className="bg-footer-bg flex gap-33 bg-gradient-footer px-1/5.26 py-32">
+      <section className="bg-footer-bg flex flex-wrap bg-gradient-footer px-[3.73%] py-32 pb-[6rem] pt-[6rem] xsm:px-[10%] xsm:py-32 sm:flex-nowrap sm:gap-33 md:px-[19.16%]">
         <div className="w-full">
-          <h6 className="text-4.5 font-bold leading-normal text-green-400">{titleText2}</h6>
-          <h1 className="mt-6 text-[2.375rem] font-bold leading-14 text-white">{titleDescription2}</h1>
+          <h6 className="text-base/normal font-bold leading-normal text-green-400 xsm:text-4.5/normal">{titleText2}</h6>
+          <h1 className="mt-6  text-3xl font-bold leading-14 text-white xsm:text-10">{titleDescription2}</h1>
           <p className="mb-16 pt-8 text-4.5 font-medium leading-[1.875rem] tracking-[0.0225rem] text-gray-100">
             {paraf3Text}
           </p>

@@ -26,15 +26,17 @@ function InputWrapper({
 }: InputWrapperProps) {
   return (
     <div className={`flex flex-col gap-2 !leading-4 text-white ${isActive && "!text-gray-300"} ${className}`}>
-      <div className="flex justify-between overflow-hidden whitespace-nowrap">
-        <span className="block w-full px-2 text-sm">{label}</span>
-        <span
-          className={`block w-full px-2 text-left text-xs opacity-0 transition-opacity ${hovered && "!opacity-100"}`}
-        >
-          {counter}
-        </span>
+      <div className="flex flex-wrap justify-between overflow-hidden whitespace-nowrap">
+        <span className="block w-1/2 px-2 text-sm">{label}</span>
+        {!hovered && (
+          <span
+            className={`block w-1/2 px-2 text-left text-xs opacity-0 transition-opacity ${!hovered && "!opacity-100"}`}
+          >
+            {counter}
+          </span>
+        )}
       </div>
-      <div className={`relative w-full text-[.8125rem] ${isTextArea ? "h-full" : "h-12"}`}>
+      <div className={`relative w-full overflow-hidden text-[.8125rem] ${isTextArea ? "h-full" : "h-12"}`}>
         {children}
         {value === "" && (
           <label

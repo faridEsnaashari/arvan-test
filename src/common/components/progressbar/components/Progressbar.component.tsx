@@ -11,6 +11,7 @@ function Progressbar({ children, duration }: ProgressbarProps) {
 
   const [stepsProps, setStepProps] = useState<StepProps[]>([]);
   const [activeStep, setActiveStep] = useState(0);
+  const [mobileView, setMobileView] = useState(false);
 
   useEffect(() => {
     const props: StepProps[] = [];
@@ -19,12 +20,20 @@ function Progressbar({ children, duration }: ProgressbarProps) {
     );
     setStepProps(props);
 
-    intervalRef.current = setDurationInterval(props.length - 1);
+    const isMobileView = document.documentElement.clientWidth <= 480;
+
+    !isMobileView && (intervalRef.current = setDurationInterval(props.length - 1));
+
+    setMobileView(isMobileView);
 
     return () => clearInterval(intervalRef.current);
   }, []);
 
   const setDurationInterval = (numberOfSteps: number, runAtBegin?: boolean) => {
+    if (mobileView) {
+      return;
+    }
+
     if (runAtBegin) {
       setActiveStep((activeStep) => (activeStep === numberOfSteps ? 0 : activeStep + 1));
     }
@@ -61,7 +70,7 @@ function Progressbar({ children, duration }: ProgressbarProps) {
 
   return (
     <div className="w-full" onMouseOver={onHovered} onMouseLeave={onHoveredCancelled}>
-      <div className="flex w-full justify-between">{getTabs()}</div>
+      <div className="flex w-full flex-wrap xsm:flex-nowrap xsm:justify-between">{getTabs()}</div>
       <div className="w-full">{getContent()}</div>
     </div>
   );

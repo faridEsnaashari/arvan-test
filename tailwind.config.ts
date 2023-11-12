@@ -4,6 +4,9 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      screens: {
+        xsm: "480px",
+      },
       fontFamily: {
         bnazanin: ["var(--font-b-nazanin)"],
       },
@@ -15,7 +18,6 @@ export default {
         14: "3.5rem",
       },
       spacing: {
-        "1/5.26": "19.16%",
         "1/2.05": "48.70%",
         "33": "8.25rem",
       },
@@ -25,6 +27,7 @@ export default {
       },
       backgroundImage: {
         "gradient-footer": "linear-gradient(73deg, rgba(15,91,90,1) 0%, rgba(8,36,39,1) 50%, rgba(8,34,37,1) 100%);",
+        "gradient-tab": "linear-gradient(260deg, #00BABA -6.71%, #002437 161.27%);",
       },
       colors: {
         input: {

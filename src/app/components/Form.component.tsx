@@ -62,9 +62,9 @@ function Form() {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="flex flex-wrap gap-[2.5%] gap-y-6">
+      <div className="flex flex-wrap gap-y-6 xsm:gap-[2.5%]">
         <TextField
-          className="w-1/2.05"
+          className="mb-2 w-full xsm:w-1/2.05"
           label={textFieldLabel1}
           placeholder={textFieldPlaceholder1}
           value={name}
@@ -74,7 +74,7 @@ function Form() {
           errorText={errorText}
         />
         <TextField
-          className="w-1/2.05"
+          className="mb-2 w-full xsm:w-1/2.05"
           label={textFieldLabel2}
           placeholder={textFieldPlaceholder2}
           value={email}
@@ -84,7 +84,7 @@ function Form() {
           errorText={errorText}
         />
         <TextField
-          className="w-1/2.05"
+          className="mb-2 w-full xsm:w-1/2.05"
           label={textFieldLabel3}
           placeholder={textFieldPlaceholder3}
           value={phonenumber}
@@ -94,7 +94,7 @@ function Form() {
           errorText={errorText}
         />
         <TextField
-          className="w-1/2.05"
+          className="mb-2 w-full xsm:w-1/2.05"
           label={textFieldLabel4}
           placeholder={textFieldPlaceholder4}
           value={company}
@@ -102,7 +102,7 @@ function Form() {
           onCorrect={(value) => isEmptyString(value)}
         />
         <TextField
-          className="w-1/2.05"
+          className="mb-2 w-full xsm:w-1/2.05"
           label={textFieldLabel5}
           placeholder={textFieldPlaceholder5}
           value={phonenumber2}
@@ -110,7 +110,7 @@ function Form() {
           onCorrect={(value) => isValidPhoneNumber(value)}
         />
         <TextField
-          className="w-1/2.05"
+          className="mb-2 w-full xsm:w-1/2.05"
           label={textFieldLabel6}
           placeholder={textFieldPlaceholder6}
           value={company2}
@@ -126,9 +126,11 @@ function Form() {
           onCorrect={(value) => isEmptyString(value)}
         />
       </div>
-      <div className="flex justify-end">
+      <div className="flex justify-start xsm:justify-end">
         <Button className="coursor-pointer mt-12 flex rounded bg-green-400 px-5 py-3 text-gray-900">
-          <span className="ml-2 text-sm leading-4">{submitFormResult.isFetching ? "wait" : formButtonText}</span>
+          <span className="ml-2 text-base/4 xsm:text-sm/4">
+            {submitFormResult.isFetching ? "wait" : formButtonText}
+          </span>
           <div className="h-4 w-4">
             <ArrowIcon />
           </div>

@@ -12,11 +12,19 @@ function Baner() {
         src={BanerImage}
         alt="baner image"
       />
-      <div className="py-[3.75%] pl-[47.08%] pr-1/5.26">
-        <h1 className="text-10 font-bold leading-14">{headingText}</h1>
-        <p className="mt-6 text-base font-medium leading-[1.625rem]">{headingDescriptionText}</p>
-        <Button className="coursor-pointer mt-12 flex rounded-lg bg-white px-6 py-3 text-green-900">
-          <span className="ml-2 text-sm leading-4 text-green-900">{buttonText}</span>
+      <div className="px-[3.73%] pb-[4.5rem] pt-[15.12rem] xsm:py-[4.5rem] xsm:pl-[20%] xsm:pr-[10%] md:pl-[47.08%] md:pr-[19.16%]">
+        <h1 className="text-[2rem] font-bold leading-14 xsm:text-10">{headingText}</h1>
+        <p className="mt-6 text-sm font-normal leading-[1.625rem] xsm:text-base xsm:font-medium">
+          {headingDescriptionText}
+        </p>
+        <Button className="coursor-pointer mt-12 flex w-full justify-center rounded-lg bg-white px-6 py-3 font-bold text-green-900 xsm:w-fit">
+          <span className="ml-2 text-sm leading-4">{buttonText}</span>
+          <div className="h-4 w-4">
+            <ArrowIcon />
+          </div>
+        </Button>
+        <Button className="coursor-pointer mt-4 flex w-full justify-center rounded-lg border-2 border-white px-6 py-3 font-bold text-white xsm:hidden">
+          <span className="ml-2 text-sm leading-4">{buttonText}</span>
           <div className="h-4 w-4">
             <ArrowIcon />
           </div>
