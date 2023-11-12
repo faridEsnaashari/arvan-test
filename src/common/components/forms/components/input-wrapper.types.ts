@@ -16,7 +16,7 @@ export type InputWrapperProps = {
   onHovered: () => void;
   onHoveredCancelled: () => void;
   inputId: string;
-  typing: boolean;
+  typing?: boolean;
   onFocus: () => void;
   onFocusCancelled: () => void;
   isTextArea?: boolean;
