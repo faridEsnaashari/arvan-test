@@ -63,7 +63,7 @@ function TextField({
       typing={typing}
     >
       <input
-        className={`absolute h-12 w-full rounded-lg border border-solid border-green-700 bg-input-bg p-4 transition-colors hover:border-green-600 ${
+        className={`absolute h-12 w-full rounded-lg border border-solid border-green-700 bg-input-bg p-4 !pl-8 transition-colors hover:border-green-600 ${
           correct && "!border-2 !border-green-500"
         } ${showError && "!border-2 !border-red-600"} ${isActive && "!border !border-green-900 !text-gray-400"}`}
         ref={inputRef}
