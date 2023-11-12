@@ -32,6 +32,10 @@ export default {
       colors: {
         input: {
           bg: "rgba(0, 91, 91, 0.50)",
+          radio: {
+            bg: "#024a4b",
+            bghover: "#015253",
+          },
         },
         black: {
           100: "#001215",
