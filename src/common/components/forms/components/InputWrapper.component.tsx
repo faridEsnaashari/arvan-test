@@ -36,11 +36,13 @@ function InputWrapper({
           </span>
         )}
       </div>
-      <div className={`relative w-full overflow-hidden text-[.8125rem] ${isTextArea ? "h-full" : "h-12"}`}>
+      <div className={`relative w-full text-[.8125rem] ${isTextArea ? "h-full" : "h-12"}`}>
         {children}
         {value === "" && (
           <label
-            className={`absolute right-4 top-4 cursor-text text-green-700 ${isActive && "!text-gray-400"}`}
+            className={`absolute right-4 top-4 cursor-text break-all pl-2 text-green-700 ${
+              isActive && "!text-gray-400"
+            }`}
             htmlFor={inputId + ""}
             onMouseOver={onHovered}
             onMouseOut={onHoveredCancelled}
